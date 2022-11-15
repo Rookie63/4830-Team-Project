@@ -1,7 +1,7 @@
 package util;
 
 public interface Info {
-   public String projectName = "webproject";
-   public String searchWebName = "simpleSearchHB.html";
+   public String projectName = "teamwebproject-Henrich";
+   public String searchWebName = "simpleSearchAdmin.html";
    public String insertWebName = "simpleInsertHB.html";
 }
