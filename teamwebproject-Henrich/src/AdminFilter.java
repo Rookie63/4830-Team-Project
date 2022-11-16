@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/list/*")
-public class LoginFilter implements Filter {
+@WebFilter("/admin/*")
+public class AdminFilter implements Filter {
 
     @Override
     public void init(FilterConfig config) throws ServletException {
@@ -28,8 +28,12 @@ public class LoginFilter implements Filter {
         
         if (session == null || session.getAttribute("user") == null) {
             response.sendRedirect(request.getContextPath() + "/login.html"); // No logged-in user found, so redirect to login page.
-        } else {
+        } else if (session.getAttribute("user").equals("admin")){
             chain.doFilter(req, res); // Logged-in user found, so just continue request.
+        }
+        else
+        {
+        	response.sendRedirect(request.getContextPath() + "/login.html");
         }
     }
 
