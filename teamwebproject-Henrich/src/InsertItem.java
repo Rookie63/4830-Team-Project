@@ -21,7 +21,7 @@ public class InsertItem extends HttpServlet implements Info {
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       String name = request.getParameter("name").trim();
       String description = request.getParameter("description").trim();
-      String price = request.getParameter("phone").trim();
+      String price = request.getParameter("price").trim();
       boolean pickup = request.getParameter("pickup").trim() != null;
       boolean delivery = request.getParameter("delivery").trim() != null;
       String locations = request.getParameter("locations").trim();

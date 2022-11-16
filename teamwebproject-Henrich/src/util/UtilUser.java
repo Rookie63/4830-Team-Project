@@ -36,7 +36,11 @@ public class UtilUser {
 
    public static int login(String username, String password) {
 	   Session session = getSessionFactory().openSession();
-	   String sql = "FROM User U WHERE U.password='" +password + " AND (username = '" + username + "' OR email = '" + username + "')";
+	   String sql = "FROM User U WHERE U.username='" + username +"' AND U.password='" +password +"'";
+	   
+	   
+	   
+	   
 	   
 	   List<User> users = session.createQuery(sql).list();
 	   

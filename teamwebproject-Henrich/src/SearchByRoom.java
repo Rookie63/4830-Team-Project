@@ -14,7 +14,7 @@ import util.Info;
 
 import util.Util_Item;
 
-@WebServlet("/SearchByType")
+@WebServlet("/SearchByRoom")
 public class SearchByRoom extends HttpServlet implements Info {
    private static final long serialVersionUID = 1L;
 

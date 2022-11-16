@@ -23,22 +23,22 @@ public class Login extends HttpServlet{
    }
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      String username = request.getParameter("username").trim();
+      String username = request.getParameter("keyword").trim();
       String password = request.getParameter("password").trim();
       int check = UtilUser.login(username, password);
       if (check == 1)
       {
     	  request.setAttribute("user", "admin");
-    	  request.getRequestDispatcher("/list/AdminList").forward(request, response);
+    	  request.getRequestDispatcher("/admin/simpleSearchAdmin.html").forward(request, response);
       }
       else if (check == 2)
       {
     	  request.setAttribute("user", "user");
-    	  request.getRequestDispatcher("/list/NormList").forward(request, response);
+    	  request.getRequestDispatcher("/user/simpleSearchHB.html").forward(request, response);
       }
       else
       {
-    	  request.getRequestDispatcher("login.html").forward(request, response);   	  
+    	  request.getRequestDispatcher("accountPage.html").forward(request, response);   	  
       }
    }
 
