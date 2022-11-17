@@ -44,7 +44,7 @@ public class Util_Item {
 
       try {
          tx = session.beginTransaction();
-         List<?> items = session.createQuery("FROM MyItems").list();
+         List<?> items = session.createQuery("FROM Item").list();
          for (Iterator<?> iterator = items.iterator(); iterator.hasNext();) {
             Item item = (Item) iterator.next();
             resultList.add(item);

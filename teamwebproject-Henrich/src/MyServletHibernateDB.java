@@ -8,9 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import datamodel.Employee;
+
 import datamodel.Item;
-import util.UtilDB;
 import util.Util_Item;
 
 @WebServlet("/MyServletHibernateDB")

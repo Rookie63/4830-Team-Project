@@ -29,11 +29,13 @@ public class Login extends HttpServlet{
       if (check == 1)
       {
     	  request.setAttribute("user", "admin");
+    	  request.getSession().setAttribute("user", "admin");
     	  request.getRequestDispatcher("/admin/simpleSearchAdmin.html").forward(request, response);
       }
       else if (check == 2)
       {
     	  request.setAttribute("user", "user");
+    	  request.getSession().setAttribute("user", "user");
     	  request.getRequestDispatcher("/user/simpleSearchHB.html").forward(request, response);
       }
       else

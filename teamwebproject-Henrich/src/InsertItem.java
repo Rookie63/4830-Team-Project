@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import util.Info;
 import util.Util_Item;
 
-@WebServlet("/InsertItem")
+@WebServlet("/admin/InsertItem")
 public class InsertItem extends HttpServlet implements Info {
    private static final long serialVersionUID = 1L;
 
@@ -26,7 +26,7 @@ public class InsertItem extends HttpServlet implements Info {
       boolean delivery = request.getParameter("delivery").trim() != null;
       String locations = request.getParameter("locations").trim();
       String rooms = request.getParameter("rooms").trim();
-      Util_Item.createItem(name, description, price, pickup, delivery, locations, rooms);
+      Util_Item.createItem(name, description, price, true, true, locations, rooms);
 
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();

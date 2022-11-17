@@ -32,9 +32,12 @@ public class Item {
    @Column(name = "price")
    private String price;
    
+   
+ 
    @Column(name = "pickup")
    private boolean pickup;
 
+ 
    @Column(name = "delivery")
    private boolean delivery;
    
