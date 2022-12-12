@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,26 +7,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import datamodel.Item;
 import util.Info;
-
+import util.UtilUser;
 import util.Util_Item;
 
-@WebServlet("/SearchByType")
-public class SearchByType extends HttpServlet implements Info {
+@WebServlet("/SignUp")
+public class SignUp extends HttpServlet implements Info {
    private static final long serialVersionUID = 1L;
 
-   public SearchByType() {
+   public SignUp() {
       super();
    }
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      String keyword = request.getParameter("keyword").trim();
+      String username = request.getParameter("username").trim();
+      String password = request.getParameter("password").trim();
+      UtilUser.createUser(username, password);
 
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
-      String title = "Database Result";
+      String title = "Thank you for Signing Up!";
       String docType = "<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n"; //
       out.println(docType + //
             "<html>\n" + //
@@ -35,31 +34,10 @@ public class SearchByType extends HttpServlet implements Info {
             "<body bgcolor=\"#f0f0f0\">\n" + //
             "<h1 align=\"center\">" + title + "</h1>\n");
       out.println("<ul>");
-
-      List<Item> listEmployees = null;
-      if (keyword != null && !keyword.isEmpty()) {
-         listEmployees = Util_Item.listItemByType(keyword);
-      } else {
-         listEmployees = Util_Item.listEmployees();
-      }
-      display(listEmployees, out);
+      out.println("<li> Username: " + username);
       out.println("</ul>");
-      out.println("<a href=/" + projectName + "/" + searchWebName + ">Search Data</a> <br>");
+      out.println("<a href=/" + projectName + "/" + LoginWebName + ">Login</a> <br>");
       out.println("</body></html>");
-   }
-
-   void display(List<Item> listItems, PrintWriter out) {
-      for (Item item : listItems) {
-         System.out.println("[DBG] " + item.getId() + ", " //
-               + item.getName() + ", " //
-               + item.getDescription() + ", " //
-         	   + item.getPrice());
-
-         out.println("<li>" + item.getId() + ", " //
-               + item.getName() + ", " //
-               + item.getDescription() + ", " //
-         	   + item.getPrice() + "</li>");
-      }
    }
 
    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
