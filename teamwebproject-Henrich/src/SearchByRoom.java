@@ -40,7 +40,7 @@ public class SearchByRoom extends HttpServlet implements Info {
       if (keyword != null && !keyword.isEmpty()) {
          listEmployees = Util_Item.listItemByRoom(keyword);
       } else {
-         listEmployees = Util_Item.listEmployees();
+         listEmployees = Util_Item.listItems();
       }
       display(listEmployees, out);
       out.println("</ul>");

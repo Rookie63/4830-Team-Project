@@ -36,7 +36,7 @@ public class Util_Item {
       return sessionFactory;
    }
 
-   public static List<Item> listEmployees() {
+   public static List<Item> listItems() {
       List<Item> resultList = new ArrayList<Item>();
 
       Session session = getSessionFactory().openSession();
@@ -70,10 +70,10 @@ public class Util_Item {
          tx = session.beginTransaction();
          System.out.println((Item)session.get(Item.class, 1)); // use "get" to fetch data
         // Query q = session.createQuery("FROM Employee");
-         List<?> items = session.createQuery("FROM MyItems").list();
+         List<?> items = session.createQuery("FROM Item").list();
          for (Iterator<?> iterator = items.iterator(); iterator.hasNext();) {
             Item item = (Item) iterator.next();
-            if (item.getName().contains(keyword)) {
+            if (item.getName().toLowerCase().equals(keyword.toLowerCase())) {
                resultList.add(item);
             }
          }
@@ -98,10 +98,10 @@ public class Util_Item {
 	         tx = session.beginTransaction();
 	         System.out.println((Item)session.get(Item.class, 1)); // use "get" to fetch data
 	        // Query q = session.createQuery("FROM Employee");
-	         List<?> items = session.createQuery("FROM MyItems").list();
+	         List<?> items = session.createQuery("FROM Items").list();
 	         for (Iterator<?> iterator = items.iterator(); iterator.hasNext();) {
 	            Item item = (Item) iterator.next();
-	            if (item.getRooms().contains(keyword)) {
+	            if (item.getRooms().toLowerCase().contains(keyword.toLowerCase())) {
 	               resultList.add(item);
 	            }
 	         }

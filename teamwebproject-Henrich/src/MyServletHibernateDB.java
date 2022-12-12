@@ -40,8 +40,8 @@ public class MyServletHibernateDB extends HttpServlet {
             "<body bgcolor=\"#f0f0f0\">\n" + //
             "<h1 align=\"center\">" + title + "</h1>\n");
       out.println("<ul>");
-      List<Item> listEmployees = Util_Item.listEmployees();
-      for (Item employee : listEmployees) {
+      List<Item> listItems = Util_Item.listItems();
+      for (Item employee : listItems) {
          System.out.println("[DBG] " + employee.getId() + ", " //
                + employee.getName() + ", " //
                + employee.getDescription() + ", " //
