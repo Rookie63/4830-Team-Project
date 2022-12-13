@@ -1,0 +1,109 @@
+<html>
+<head>
+<style>
+header {
+    background-color:DC0F0F;
+    color:white;
+    text-align:center;
+    padding:5px;
+    font-size: 13px;
+}
+nav {
+    line-height:30px;
+    background-color:#FFC4C4;
+    height:500px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+section {
+    width:375px;
+    float:left;
+    padding:10px;
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:hover {
+  color: gray;
+  background-color: transparent;
+  text-decoration: underline;
+}
+h1
+{
+	font-family: Trebuchet MS, Verdana;
+}
+body
+{
+	font-family: Trebuchet MS, Verdana;
+}
+input[type=text] {
+  width: 100%;
+  padding: 7px 13px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: F4F4F4;
+}
+input[type=submit] {
+  width: 100%;
+  padding: 8px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: bolder;
+}
+</style>
+</head>
+
+<body>
+<header>
+<h1> Search For Furniture/Appliances</h1>
+</header>
+
+<nav>
+<form action="DisplayCart" method="POST">
+	<input type="submit" value="Go to Cart" />
+</form>
+</nav>
+
+<section>
+    <h1>Search by Type of Furniture</h1>
+
+    <form action="SearchByType" method="POST">
+
+        Furniture Type: <input type="text" name="keyword" placeholder="Chair, Table, etc..."> <br />
+
+        <input type="submit" value="Search" />
+    </form>
+    
+	<h1>or<br><br>Search by the Room You Wish to Shop For</h1>
+	
+	
+	<form action="SearchByRoom" method="POST">
+
+        Room: <input type="text" name="keyword" placeholder="Living Room, Kitchen, etc..."> <br />
+
+        <input type="submit" value="Search" />
+    </form>
+    
+</section>
+
+<footer>
+Copyright
+</footer>
+</body>
+</html>
