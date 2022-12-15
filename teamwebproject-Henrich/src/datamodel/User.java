@@ -83,12 +83,12 @@ public class User {
 	      return admin;
 	   }
    
-   public void setAdmin() {
+   public void setAdmin(int admin) {
 	      this.admin = admin;
 	   }
 
    @Override
    public String toString() {
-      return "Employee: " + this.id + ", " + this.password;
+      return "User: " + this.id + ", " + this.username;
    }
 }

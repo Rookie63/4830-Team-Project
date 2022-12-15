@@ -98,7 +98,7 @@ public class Util_Item {
 	         tx = session.beginTransaction();
 	         System.out.println((Item)session.get(Item.class, 1)); // use "get" to fetch data
 	        // Query q = session.createQuery("FROM Employee");
-	         List<?> items = session.createQuery("FROM Items").list();
+	         List<?> items = session.createQuery("FROM Item").list();
 	         for (Iterator<?> iterator = items.iterator(); iterator.hasNext();) {
 	            Item item = (Item) iterator.next();
 	            if (item.getRooms().toLowerCase().contains(keyword.toLowerCase())) {

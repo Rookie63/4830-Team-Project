@@ -64,7 +64,7 @@ public class UtilUser {
    
 
    
-   public static List<User> listEmployees() {
+   public static List<User> listUsers() {
       List<User> resultList = new ArrayList<User>();
 
       Session session = getSessionFactory().openSession();

@@ -44,7 +44,7 @@ public class SearchByType extends HttpServlet implements Info {
       }
       display(listEmployees, out);
       out.println("</ul>");
-      out.println("<a href=/" + projectName + "/" + searchWebName + ">Search Data</a> <br>");
+      out.println("<a href=/" + projectName + "/admin/simpleSearchAdmin.html>Search Data</a> <br>");
       out.println("</body></html>");
    }
 
